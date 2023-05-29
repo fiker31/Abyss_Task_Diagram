@@ -1,0 +1,134 @@
+.node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.node_value {
+  position: relative;
+  width: 150px;
+  font-weight: bold;
+}
+
+.childrens {
+  position: relative;
+  display: flex;
+  gap: 50px;
+  padding-top: 12px;
+}
+
+.parent_connection {
+  position: absolute;
+  bottom: 0;
+}
+
+.parent_connection:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  height: 15px;
+  width: 2px;
+  background: grey;
+}
+
+.sibling_connection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.child_connection:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  height: 15px;
+  width: 2px;
+  background: grey;
+}
+
+.node:not(:only-child) > .sibling_connection:after {
+  content: '';
+  position: absolute;
+  top: -15px;
+  width: calc(100% + 50px);
+  height: 2px;
+  background: grey;
+}
+
+.node:not(:only-child):first-of-type > .sibling_connection:after {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: calc(50% - 75px);
+  height: 2px;
+  background: gray;
+}
+
+
+.node:not(:only-child):last-of-type >.sibling_connection:after {
+  content: '';
+  position: absolute;
+  top: -15px;
+  right: calc(50% + 75px);
+  height: 2px;
+  background: grey;
+}
+
+.node_value_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 300px;
+  max-width: 300px;
+}
+
+.form_controls {
+  display: flex;
+  gap: 15px;
+}
+
+.ctrl {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  border: none;
+  color: white;
+  background: grey;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ctrl:hover {
+  background: darkgrey;
+}
+
+.ctrl_danger {
+  background: rgb(249, 106, 106);
+}
+
+.ctrl_danger:hover {
+  background: rgb(251, 89, 89);
+}
+
+.ctrl_success {
+  background: rgb(156, 254, 156);
+}
+
+.ctrl_success:hover {
+  background: rgb(121, 255, 121);
+}
+
+.edit_input {
+  border: none;
+  outline: 1px solid lightgrey;
+  border-radius: 4px;
+  width: 100%;
+  padding: 4px;
+}

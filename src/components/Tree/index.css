@@ -1,0 +1,6 @@
+.tree {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  transition: all .4s;
+}
